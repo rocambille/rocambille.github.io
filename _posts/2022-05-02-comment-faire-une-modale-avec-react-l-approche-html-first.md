@@ -1,8 +1,8 @@
 ---
 ref: how-to-do-a-modal-in-react-the-html-first-approach
-lang: en
+lang: fr
 layout: post
-title: "How to do a Modal in React: the HTML first approach"
+title: 'Comment faire une modale avec React : l''approche "HTML first"'
 tags: javascript react html
 ---
 

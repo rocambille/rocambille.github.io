@@ -5,6 +5,7 @@
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  line-height: $base-line-height * $base-font-size * 2.25;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -13,7 +14,6 @@
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
@@ -26,7 +26,6 @@
 
 .site-nav {
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
     display: none;
@@ -41,9 +40,7 @@
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
+    margin-left: $spacing-unit;
   }
 
   @include media-query($on-palm) {
@@ -85,17 +82,14 @@
 
     input:checked ~ .trigger {
       display: block;
-      padding-bottom: 5px;
+      padding: $spacing-unit;
     }
 
     .page-link {
       display: block;
-      padding: 5px 10px;
+      padding: 0 $spacing-unit / 2;
 
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
+      margin-left: 0;
     }
   }
 }

@@ -1,8 +1,8 @@
 ---
 ref: why-you-should-use-typescript-a-tale-of-self-documented-code
-lang: en
+lang: fr
 layout: post
-title: "Why you should use TypeScript: a tale of self-documented code"
+title: "Pourquoi utiliser TypeScript : une histoire de code autodocumenté"
 tags: typescript javascript react
 ---
 

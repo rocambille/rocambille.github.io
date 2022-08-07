@@ -1,5 +1,6 @@
 ---
 ref: home
-lang: fr
+lang: en
 layout: home
+permalink: /home
 ---
