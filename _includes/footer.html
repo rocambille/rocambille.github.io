@@ -1,14 +1,12 @@
 <footer class="site-footer h-card wrapper">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <h2 class="footer-heading">{{ site.title | escape }}</h2>
+  <h2 class="footer-heading">{{ site.data[page.lang].title | escape }}</h2>
 
   <div class="footer-col-wrapper">
     <div class="footer-col footer-col-1">
       <ul class="contact-list">
         <li class="p-name">
           {%- if site.author -%} {{ site.author | escape }} {%- else -%} {{
-          site.title | escape }} {%- endif -%}
+          site.data[page.lang].title | escape }} {%- endif -%}
         </li>
         {%- if site.email -%}
         <li>
