@@ -1,16 +1,16 @@
 ---
 ref: why-you-should-use-typescript-a-tale-of-self-documented-code
-lang: fr
-layout: post
-title: "Pourquoi utiliser TypeScript : une histoire de code autodocumenté"
+lang: en
+title: "Why you should use TypeScript: a tale of self-documented code"
 tags: typescript javascript react
+authors:
+  - romain-guillemot
+updated_at: "2022-05-14"
 ---
 
 ![documentation is beautiful](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
 
 Make your code the best comment ever.
-
-_Last update: May 14, 2022_
 
 ## The undocumented array
 

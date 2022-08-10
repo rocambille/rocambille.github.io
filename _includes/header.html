@@ -1,7 +1,7 @@
 <header class="site-header wrapper" role="banner">
   {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
-  = site.header_pages | default: default_paths -%} {% assign home=site.pages |
-  where:"ref", "home" | where:"lang", page.lang | first %}
+  = site.header_pages | default: default_paths -%} {%- assign home=site.pages |
+  where:"ref", "home" | where:"lang", page.lang | first -%}
   <a class="site-title" rel="author" href="{{ home.url | relative_url }}"
     >{{ site.data[page.lang].title | escape }}</a
   >
@@ -18,17 +18,15 @@
     </label>
 
     <div class="trigger">
-      {% assign sources=site.posts | concat: site.pages | where:"ref", page.ref
-      | sort: 'lang' %} {% if page.lang == "fr" %}
+      {%- assign sources=site.posts | concat: site.pages | concat: site.authors
+      | where:"ref", page.ref | sort: 'lang' -%} {%- if page.lang == "fr" -%}
       <a href="{{ sources[0].url }}">in english?</a>
-      {% else %}
+      {%- else -%}
       <a href="{{ sources[1].url }}">en français ?</a>
-      {% endif %} {%- for path in page_paths -%} {%- assign my_page = site.pages
-      | where: "path", path | first -%} {%- if my_page.title -%}
-      <a class="page-link" href="{{ my_page.url | relative_url }}"
-        >{{ my_page.title | escape }}</a
-      >
-      {%- endif -%} {%- endfor -%}
+      {%- endif -%} {%- assign pages = site.pages | where:"lang", page.lang -%}
+      {%- for page in pages -%}
+      <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
+      {%- endfor -%}
     </div>
   </nav>
   {%- endif -%}

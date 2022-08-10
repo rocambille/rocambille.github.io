@@ -1,9 +1,10 @@
 ---
 ref: how-to-do-a-modal-in-react-the-html-first-approach
-lang: en
-layout: post
-title: "How to do a Modal in React: the HTML first approach"
-tags: javascript react html
+lang: fr
+title: 'Comment faire une modale avec React : l''approche "HTML first"'
+tags: html react javascript
+authors:
+  - romain-guillemot
 ---
 
 ![show me the way](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
@@ -206,7 +207,7 @@ function Window({ children }) {
 Modal.Window = Window;
 ```
 
-A complete demo with some style is available here: https://codepen.io/rocambille/pen/poaoKYm.
+A complete demo with some style is available here: [https://codepen.io/rocambille/pen/poaoKYm](https://codepen.io/rocambille/pen/poaoKYm).
 
 Sometimes, we want things. And sometimes, we want them so hard we start writing code. Using JS or any other language/tool/framework, because that's what we learned. Using pure CSS when possible.
 

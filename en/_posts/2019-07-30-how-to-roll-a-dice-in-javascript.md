@@ -1,16 +1,16 @@
 ---
 ref: 2019-07-30-how-to-roll-a-dice-in-javascript
 lang: en
-layout: post
 title: How to roll a dice in JavaScript?
-tags: javascript beginners webdev
+tags: javascript beginners random
+authors:
+  - romain-guillemot
+updated_at: "2022-05-11"
 ---
 
 ![dices are beautiful](https://cdn-images-1.medium.com/max/1024/0*yAFHaiCH9sI5cdLe)
 
 Let's build the ultimate dice step by step.
-
-_Last update: May 11, 2022_
 
 ## Math.random() as a basis
 
