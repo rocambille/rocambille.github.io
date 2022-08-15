@@ -20,22 +20,12 @@ layout: default
       {%- endfor -%}
     </address>
     <p class="post-time">
-      <time
-        class="dt-published"
-        datetime="{{ page.date | date_to_xmlschema }}"
-        itemprop="datePublished"
-      >
-        {{- page.date | date: site.data[page.lang].date_format -}}
-      </time>
-      {%- if page.updated_at %} ({{ site.data[page.lang].post.updated -}}
-      <time
-        class="dt-modified"
-        datetime="{{ page.updated_at | date_to_xmlschema }}"
-        itemprop="dateModified"
-      >
-        {{- page.updated_at | date: site.data[page.lang].date_format -}}
-      </time>
-      {%- endif %})
+      {{ site.data[page.lang].post.published -}}{%- include {{ page.lang |
+      append: '/time.html' }} class="dt-published" date=page.date
+      itemprop="datePublished" -%}{%- if page.updated_at %} - {{
+      site.data[page.lang].post.updated -}}{%- include {{ page.lang | append:
+      '/time.html' }} class="dt-modified" date=page.updated_at
+      itemprop="dateModified" -%}{%- endif -%}
     </p>
   </header>
 

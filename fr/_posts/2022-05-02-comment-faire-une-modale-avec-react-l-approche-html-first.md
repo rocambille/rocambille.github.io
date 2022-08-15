@@ -7,28 +7,28 @@ authors:
   - romain-guillemot
 ---
 
-![show me the way](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
+![montrez moi le chemin](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
 
-Do HTML before doing CSS, or JS... or React.
+Faites du HTML avant de faire du CSS, ou du JS... ou du React.
 
-## First, there was a modal
+## Au commencement était une modale
 
-This story started with a modal. I needed a modal window in a React project. As a recall, here is a good definition from [wikipedia](https://en.wikipedia.org/wiki/Modal_window):
+Cette histoire a commencé avec une modale. J'avais besoin d'une fenêtre modale dans un projet React. Pour rappel, voici une bonne définition de [wikipedia](https://en.wikipedia.org/wiki/Modal_window):
 
-> A modal window creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it. Users _must_ interact with the modal window before they can return to the parent application.
+> Une fenêtre modale crée un mode qui désactive la fenêtre principale mais la garde visible, avec la fenêtre modale comme fenêtre enfant devant elle. Les utilisateurs _doivent_ interagir avec la fenêtre modale avant de pouvoir revenir à l'application parente.
 
-Using React, this can take the form:
+En utilisant React, cela peut prendre la forme suivante :
 
 ```react
-<Modal trigger={<button type="button">Click me</button>}>
-  Lorem ipsum in a modal
+<Modal trigger={<button type="button">Cliquez moi</button>}>
+  Lorem ipsum dans une modale
 </Modal>
 ```
 
-With a first implementation of the `Modal` component:
+Avec une première implémentation du composant `Modal` :
 
 ```react
-function Modal({ trigger, children }) {
+function Modal ({ trigger, children }) {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -41,7 +41,7 @@ function Modal({ trigger, children }) {
           <button
             type="button"
             onClick={() => setOpen(false)}>
-            x
+            X
           </button>
           <div>{children}</div>
         </div>
@@ -51,27 +51,27 @@ function Modal({ trigger, children }) {
 }
 ```
 
-I removed the class names and the style to focus on the modal logic and semantic. That's a first issue here: the **semantic**.
+J'ai supprimé les noms de classe et le style pour me concentrer sur la logique de la modale et sa sémantique. C'est un premier problème ici : la **sémantique**.
 
-The modal is composed with the trigger and the content of the modal window. Except the content isn't qualified as a "modal window" content. Moreover this `Modal` handles the trigger and the content through different mechanisms:
+La modale est composé d'un déclencheur (_trigger_) et d'un contenu (_children_). Sauf que le contenu n'est pas explicitement décrit comme un contenu de fenêtre modale. De plus, ce composant `Modal` gère le déclencheur et le contenu via différents mécanismes :
 
-- The trigger is a prop, waiting for an element (container + content: here a `<button>` with a "Click me" text).
-- The _lorem ipsum_ is the content of the component, passed as a rendering node (content only: the `Modal` wraps the text in a `<div>`).
+- Le trigger est une prop, en attente d'un élément (un conteneur et un contenu : ici un `<button>` avec un texte "Cliquez moi").
+- Le _lorem ipsum_ est le contenu du composant, passé comme nœud de rendu (contenu uniquement : le composant `Modal` enveloppera le texte dans une `<div>`).
 
-## And then, there were the subcomponents
+## Puis vinrent les sous-composants
 
-A more semantic, consistent version could be:
+Une version plus sémantique et cohérente pourrait être :
 
 ```react
-<Modal>
-  <Modal.Trigger>Click me</Modal.Trigger>
+<Modale>
+  <Modal.Trigger>Cliquez-moi</Modal.Trigger>
   <Modal.Window>
-    Lorem ipsum in a modal
+    Lorem ipsum dans une modale
   </Modal.Window>
 </Modal>
 ```
 
-Here the trigger and the window are in the same level, while the _lorem ipsum_ is qualified as the modal window content. In a nutshell, this can be achieved by declaring new components `Trigger` and `Window` as properties of `Modal`. These are React subcomponents. Something like that:
+Ici le déclencheur et la fenêtre sont au même niveau, tandis que le _lorem ipsum_ est explicitement le contenu de la fenêtre modale. Cela peut être réalisé en déclarant des nouveaux composants `Trigger` et `Window` en tant que propriétés de `Modal`. Ce sont des sous-composants de React. Quelque chose comme ça :
 
 ```react
 function Modal(/* ... */) {
@@ -91,7 +91,7 @@ function Window(/* ... */) {
 Modal.Window = Window;
 ```
 
-Following our previous implementation, `Trigger` and `Window` should display the open/close buttons. Modal is a container, and should display its children:
+Selon notre implémentation précédente, `Trigger` et `Window` devraient afficher les boutons d'ouverture/fermeture. `Modal` est un conteneur et se contentera d'afficher ses enfants :
 
 ```react
 function Modal({ children }) {
@@ -121,12 +121,12 @@ Modal.Trigger = Trigger;
 function Window({ children }) {
   /* ... */
 
-  return isOpen && (
+  retour isOpen && (
     <div>
       <button
         type="button"
         onClick={() => setOpen(false)}>
-        x
+        X
       </button>
       {children}
     </div>
@@ -136,7 +136,7 @@ function Window({ children }) {
 Modal.Window = Window;
 ```
 
-Except `isOpen` and `setOpen` are parts of the modal state. So they must be passed to the modal children. A complex prop drilling. Complex because first you will have to "parse" the children to retrieve `Trigger` and `Window`... Let's take the easy way out with the Context API:
+Sauf que `isOpen` et `setOpen` font partie de l'état de `Modal`. Ils doivent donc être passés à ses enfants. Un _prop drilling_ complexe. Complexe car il faudra d'abord "parser" les enfants pour récupérer `Trigger` et `Window`... Prenons la solution de facilité avec l'API Context :
 
 ```react
 const ModalContext = createContext();
@@ -168,12 +168,12 @@ Modal.Trigger = Trigger;
 function Window({ children }) {
   const { isOpen, setOpen } = useContext(ModalContext);
 
-  return isOpen && (
+  retour isOpen && (
     <div>
       <button
         type="button"
         onClick={() => setOpen(false)}>
-        x
+        X
       </button>
       {children}
     </div>
@@ -183,32 +183,32 @@ function Window({ children }) {
 Modal.Window = Window;
 ```
 
-What a beauty! Or is it really?
+Quelle beauté ! N'est-il pas ?
 
-## The HTML first approach
+## L'approche HTML first
 
-It was. Really. Such a beauty this was added to HTML ages ago. An element with an open/close state, triggered by a child, and controlling the display of its content. There are the `<details>` and `<summary>` tags. They make our `Modal` become:
+C'est une beauté. Vraiment. Une telle beauté qu'elle a été ajoutée à HTML depuis des années. Un élément avec un état ouvert/fermé, déclenché par un enfant, et contrôlant l'affichage de son contenu. Voilà les balises `<details>` et `<summary>`. Elles permettent à notre `Modal` de prendre une nouvelle forme :
 
 ```react
 function Modal({ children }) {
-  return <details>{children}</details>;
+  return <details>{children}</details> ;
 }
 
 function Trigger({ children }) {
-  return <summary>{children}</summary>;
+  return <summary>{children}</summary> ;
 }
 
 Modal.Trigger = Trigger;
 
 function Window({ children }) {
-  return <div>{children}</div>;
+  return <div>{children}</div> ;
 }
 
 Modal.Window = Window;
 ```
 
-A complete demo with some style is available here: [https://codepen.io/rocambille/pen/poaoKYm](https://codepen.io/rocambille/pen/poaoKYm).
+Une démo complète avec un peu de style est disponible ici : [https://codepen.io/rocambille/pen/poaoKYm](https://codepen.io/rocambille/pen/poaoKYm).
 
-Sometimes, we want things. And sometimes, we want them so hard we start writing code. Using JS or any other language/tool/framework, because that's what we learned. Using pure CSS when possible.
+Parfois, nous voulons développer des idées. Et parfois, nous les voulons si fort que nous commençons à écrire du code. Utiliser du JS ou tout autre langage/outil/framework, car c'est ce que nous avons appris. Utiliser du CSS pur lorsque cela est possible.
 
-Sometimes we should do HTML before doing CSS, or JS... or React. Using an _HTML first_ approach ;)
+Parfois, nous devrions faire du HTML avant de faire du CSS, ou du JS... ou du React. En utilisant une approche _HTML first_ ;)

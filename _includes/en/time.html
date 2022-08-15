@@ -1,0 +1,7 @@
+<time
+  class="{{ include.class }}"
+  datetime="{{ include.date | date_to_xmlschema }}"
+  itemprop="{{ include.itemprop }}"
+>
+  {{- include.date | date: "%b %d, %Y" -}}
+</time>

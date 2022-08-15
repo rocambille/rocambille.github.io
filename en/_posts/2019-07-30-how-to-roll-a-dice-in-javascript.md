@@ -30,7 +30,7 @@ function rollDice() {
 }
 ```
 
-That’s a good start: returning a random number. Remember `Math.random` is not “random enough” for serious things like cryptography, or casino games — read about [Crypto.getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) if that’s your business. `Math.random` is fair enough to roll a dice with friends. Let’s try it:
+That’s a good start: returning a random number. Remember `Math.random` is not "random enough" for serious things like cryptography, or casino games -- read about [Crypto.getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues) if that’s your business. `Math.random` is fair enough to roll a dice with friends. Let’s try it:
 
 ```js
 >> function rollDice() {
@@ -40,7 +40,7 @@ That’s a good start: returning a random number. Remember `Math.random` is not 
 <- 0.7367823644188911
 ```
 
-This `0.7367823644188911` is not really what we wanted… According to documentation, `Math.random` returns a decimal number between 0 (inclusive) and 1 (exclusive). For a 6-sided dice, we need an integer from 1 to 6. As a first guess, you may multiply by 6:
+This `0.7367823644188911` is not really what we wanted... According to documentation, `Math.random` returns a decimal number between 0 (inclusive) and 1 (exclusive). For a 6-sided dice, we need an integer from 1 to 6. As a first guess, you may multiply by 6:
 
 ```js
 >> function rollDice() {
@@ -59,7 +59,7 @@ So we would have a random decimal number between 0 (inclusive) and 6 (exclusive)
 - If 4 ≤ `Math.random() * 6` < 5, return 5
 - If 5 ≤ `Math.random() * 6` < 6, return 6
 
-This can be done using [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor). Let's try again — with a for-loop to console.log multiple rolls:
+This can be done using [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor). Let's try again -- with a for-loop to `console.log` multiple rolls:
 
 ```js
 >> function rollDice() {
@@ -92,7 +92,7 @@ function rollDice() {
 
 Now we have a function to simulate our 6-sided dice :)
 
-> Yes, but… What if we want a 4-, 8-, 12- or 20-sided one?
+> Yes, but... What if we want a 4-, 8-, 12- or 20-sided one?
 
 No big deal: you can change the magic number 6 in the code for a parameter, passing the maximum value for your dice. Something like this:
 
@@ -110,7 +110,7 @@ const rollDice20 = () => rollDice(20);
 
 ## The ultimate dice
 
-I was once inspired by a vision: “[The Ultimate Display](https://www.wired.com/2009/09/augmented-reality-the-ultimate-display-by-ivan-sutherland-1965/)” by Ivan E. Sutherland, 1965. Among others, I like this quote:
+I was once inspired by a vision: "[The Ultimate Display](https://www.wired.com/2009/09/augmented-reality-the-ultimate-display-by-ivan-sutherland-1965/)" by Ivan E. Sutherland, 1965. Among others, I like this quote:
 
 > There is no reason why the objects displayed by a computer have to follow the ordinary rules of physical reality with which we are familiar.
 
@@ -129,4 +129,4 @@ const rollDice20 = () => rollDice(1, 20);
 const rollSomeUltimateDice = () => rollDice(42, 42);
 ```
 
-This final version allows to simulate a dice which is not starting at 1. Moreover the `max` allows to simulate a uniform fair dice beyond “the ordinary rules of physical reality”. Imagine a 7-sided one. You can mimic your favorite dice game following its ordinary rules. But if you can imagine one, roll a dice which would never exist in reality ;)
+This final version allows to simulate a dice which is not starting at 1. Moreover the `max` allows to simulate a uniform fair dice beyond "the ordinary rules of physical reality". Imagine a 7-sided one. You can mimic your favorite dice game following its ordinary rules. But if you can imagine one, roll a dice which would never exist in reality ;)

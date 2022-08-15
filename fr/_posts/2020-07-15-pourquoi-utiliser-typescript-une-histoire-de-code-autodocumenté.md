@@ -8,21 +8,21 @@ authors:
 updated_at: "2022-05-14"
 ---
 
-![documentation is beautiful](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
+![de l'importance de l'autodocumentation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
 
-Make your code the best comment ever.
+Faites de votre code le meilleur commentaire possible.
 
-## The undocumented array
+## Le tableau mystère
 
-Let's start with a simple line of JavaScript:
+Commençons par une simple ligne de JavaScript :
 
 ```ts
 const a = [];
 ```
 
-Well... that's an array declaration: no big deal. What will be this array used for?
+Eh bien... c'est une déclaration de tableau : rien de bien impressionnant. À quoi va servir ce tableau ?
 
-Hard to say without any context, plus the variable name isn't helping. Here is the context: I'm working on a side project using React and React Router (v6). Here is the real code, with a real variable name, in a file named `routes.js`:
+Difficile à dire sans contexte, et le nom de la variable n'aide pas. Voici le contexte : je travaille sur un projet personnel utilisant React et React Router (v6). Voici le vrai code, avec un vrai nom de variable, dans un fichier nommé `routes.js` :
 
 ```ts
 const routes = [
@@ -33,7 +33,7 @@ const routes = [
 export default routes;
 ```
 
-Here you are: the array will list the routes of the application. Then you may use it:
+Et voilà : le tableau va lister les routes de l'application. Ensuite, vous pouvez l'utiliser :
 
 ```jsx
 import { useRoutes } from "react-router";
@@ -44,7 +44,7 @@ export default function App() {
 }
 ```
 
-Of course, I didn't invent that pattern. I saw a similar code, and wanted to make it a [template repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) on GitHub. Some kind of personal React framework. Thus the array should be empty in `routes.js`. Indeed the template shouldn't declare any route: I don't know the application I will build from my framework.
+Bien sûr, je n'ai pas inventé ce code. J'ai vu un code similaire et je voulais en faire un [modèle de dépôt](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) sur GitHub. Une sorte de framework React personnel. Dans ce contexte, le tableau doit être vide dans `routes.js`. En effet le modèle ne peut déclarer aucune route : je ne connais pas à l'avance l'application que je vais construire avec mon framework.
 
 ```ts
 const routes = [];
@@ -52,49 +52,49 @@ const routes = [];
 export default routes;
 ```
 
-I will remember how it should be filled since that's my own code... at least a while.
+Puisque c'est mon propre code, je me souviendrai comment il doit être rempli ... quelques temps du moins.
 
-## Eagleson's law
+## La loi d'Eagleson
 
-You may have heard it:
+Vous l'avez peut-être déjç entendu :
 
-> "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
+> "Tout code de votre cru que vous n'avez pas regardé depuis six mois ou plus pourrait tout aussi bien avoir été écrit par quelqu'un d'autre."
 
-Sure I would be thankful to myself 6 months later &mdash; or next week &mdash; if I add some comment:
+Bien sûr, je serais reconnaissant envers moi-même 6 mois plus tard &mdash; ou la semaine prochaine &mdash; si j'ajoute un commentaire:
 
 ```ts
-/* route format: {path: '/foo', element: <Foo />} */
+/* format de route : {path: '/foo', element: <Foo />} */
 const routes = [];
 
 export default routes;
 ```
 
-It may looks ok at first glance, but looking closer it's not. Really not. First, I can't expect anyone &mdash; including me &mdash; to understand this comment. It describes something as a route format. It doesn't explain what to do with the `routes` array. In fact it's only useful if you _already_ know what to do. Good enough for a reminder, but not what you would expect of a documentation.
+Cela peut sembler utile à première vue, mais en y regardant de plus près, ce n'est pas le cas. Vraiment pas. Tout d'abord, je ne peux m'attendre à ce qu'une personne &mdash; pas même moi &mdash; comprenne ce commentaire. Il décrit quelque chose appelé un "format de route". Il n'explique pas quoi faire avec le tableau `routes`. En fait, cela n'est utile que si vous savez _déjà_ quoi faire. Assez bon pour un rappel, mais pas ce que vous attendriez d'une documentation.
 
-And there is an other issue. Do you always read comments in code? I don't. Hours of code reading trained my eyes and my brain to ignore them as much as they can. I'm used to see comments as pollution between 2 lines of code.
+Et il y a un autre problème. Est-ce que vous lisez toujours les commentaires dans le code ? Moi, non. Des heures de lecture de code ont entraîné mes yeux et mon cerveau à les ignorer autant que possible. J'ai l'habitude de voir les commentaires comme un décor entre 2 lignes de code.
 
-Let's see the glass half full. Now we have a checklist to write useful documentation:
+Voyons le verre à moitié plein. Nous avons maintenant une liste de nos besoins pour rédiger une documentation utile :
 
-- you should express it in a explicit, non-ambiguous form,
-- you should ensure it will be read.
+- Elle doit être exprimée sous une forme explicite et non ambiguë.
+- Elle doit s'assurer qu'elle sera lue.
 
-"Explicit, non-ambiguous expression" doesn't look like a definition of writing, but of coding. You can't be sure any human will read what you wrote. But would you ask a program, you can always be sure it will "read" your code. So why not coding the documentation? A code version of this comment:
-
-```ts
-/* route format: {path: '/foo', element: <Foo />} */
-```
-
-## When the best comment is the code itself
-
-That's where [TypeScript](https://www.typescriptlang.org/) can help us. In a nutshell, you can use TypeScript to describe the type of value expected for a variable:
+L'expression "explicite et non ambiguë" ne ressemble pas à une définition de l'écriture, mais du codage. Et vous ne pouvez pas être sûr qu'un humain lira ce que vous avez écrit. Mais si vous le demandez à un programme, il "lira" toujours votre code. Alors pourquoi ne pas coder la documentation ? Une version codée de ce commentaire :
 
 ```ts
-const anyValue = "42"; // standard JS: will never complain
-const anyString: string = "42"; // ok: '42' is a string
-const anyNumber: number = "42"; // no: '42' is not a number
+/* format de route : {path: '/foo', element: <Foo />} */
 ```
 
-That's for primitives. Would you need to ensure an object has specific, typed properties you can define [an interface or a type alias](https://www.typescriptlang.org/docs/handbook/2/objects.html):
+## Quand le meilleur commentaire est le code lui-même
+
+C'est là que [TypeScript](https://www.typescriptlang.org/) peut nous aider. En résumé, vous pouvez utiliser TypeScript pour décrire le type de valeur attendu pour une variable :
+
+```ts
+const anyValue = "42"; // JS standard : ne se plaindra jamais
+const anyString: string = "42"; // ok : '42' est une chaîne de cractères
+const anyNumber: number = "42"; // non : '42' n'est pas un nombre
+```
+
+Voilà pour les types primitifs. Si vous avez besoin de vous assurer qu'un objet possède des propriétés d'un type spécifique, vous pouvez définir [une interface ou un alias de type](https://www.typescriptlang.org/docs/handbook/2/objects.html) :
 
 ```ts
 interface MyInterface {
@@ -104,11 +104,11 @@ interface MyInterface {
 
 const myObject: MyInterface = {
   anyString: '42',
-  anyNumber: '42'; // again, wrong type !!!
-};
+  anyNumber: '42' ; // encore une fois, mauvais type !!!
+} ;
 ```
 
-And that's what we need. Instead of a not-sure-to-be-useful comment, we can "type" the array. This will describe its future content:
+Et c'est exactement ce dont nous avons besoin. Au lieu d'un commentaire à l'utilité incertaine, nous pouvons "typer" le tableau. Cela décrira son futur contenu:
 
 ```ts
 import { ReactNode } from "react";
@@ -123,7 +123,7 @@ const routes: MyRoute[] = [];
 export default routes;
 ```
 
-TypeScript can't misunderstand this, and it will never forget to read it. You can try it with an invalid object:
+TypeScript ne peut pas mal comprendre ce code, et il n'oubliera jamais de le lire. Vous pouvez essayer avec un objet invalide :
 
 ```ts
 import { ReactNode } from "react";
@@ -138,11 +138,11 @@ const routes: MyRoute[] = [{ whenToRender: "/foo", whatToRender: <Foo /> }];
 export default routes;
 ```
 
-This will output something like that:
+Cela affichera quelque chose comme ça :
 
 ```ts
 Type '{ whenToRender: string; whatToRender: any; }' is not assignable to type 'MyRoute'
 Object literal may only specify known properties, and 'whenToRender' does not exist in type 'MyRoute'
 ```
 
-That's how TypeScript can help you to self-document your code ;)
+Ainsi, TypeScript peut vous aider à autodocumenter votre code ;)

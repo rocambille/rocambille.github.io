@@ -15,7 +15,9 @@ layout: default
     <ul class="post-list">
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: site.data[page.lang].date_format }}</span>
+        <span class="post-time">
+          {%- include {{ page.lang | append: '/time.html' }} class="dt-published" date=post.date itemprop="datePublished" -%}
+        </span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
