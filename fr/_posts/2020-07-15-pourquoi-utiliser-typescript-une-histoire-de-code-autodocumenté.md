@@ -10,7 +10,7 @@ updated_at: "2022-05-14"
 
 ![de l'importance de l'autodocumentation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
 
-Faites de votre code le meilleur commentaire possible.
+Faites de votre code le meilleur commentaire possible.<!--more-->
 
 ## Le tableau mystère
 

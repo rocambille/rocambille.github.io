@@ -10,7 +10,7 @@ updated_at: "2022-05-11"
 
 ![dices are beautiful](https://cdn-images-1.medium.com/max/1024/0*yAFHaiCH9sI5cdLe)
 
-Let's build the ultimate dice step by step.
+Let's build the ultimate dice step by step.<!--more-->
 
 ## Math.random() as a basis
 

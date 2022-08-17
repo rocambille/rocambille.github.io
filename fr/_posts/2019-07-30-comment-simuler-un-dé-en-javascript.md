@@ -10,7 +10,7 @@ updated_at: "2022-05-11"
 
 ![la beauté des dés](https://cdn-images-1.medium.com/max/1024/0*yAFHaiCH9sI5cdLe)
 
-Construisons le dé ultime étape par étape.
+Construisons le dé ultime étape par étape.<!--more-->
 
 ## Math.random() comme base
 

@@ -1,4 +1,14 @@
 /**
+ * Font declaration
+ */
+@font-face {
+  font-family: "Chomsky";
+  font-style: normal;
+  font-display: swap;
+  src: url(/assets/chomsky/Chomsky.woff2) format("woff2");
+}
+
+/**
  * Reset some basic elements
  */
 * {
@@ -233,4 +243,8 @@ table {
   td {
     border: 1px solid $grey-color-light;
   }
+}
+
+.mb-0 {
+  margin-bottom: 0;
 }

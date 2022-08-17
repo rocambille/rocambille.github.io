@@ -2,9 +2,11 @@
   {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
   = site.header_pages | default: default_paths -%} {%- assign home=site.pages |
   where:"ref", "home" | where:"lang", page.lang | first -%}
-  <a class="site-title" rel="author" href="{{ home.url | relative_url }}"
-    >{{ site.data[page.lang].title | escape }}</a
-  >
+  <h1>
+    <a class="site-title" rel="author" href="{{ home.url | relative_url }}">
+      {{ site.data[page.lang].title | escape }}
+    </a>
+  </h1>
 
   {%- if page_paths -%}
   <nav class="site-nav">

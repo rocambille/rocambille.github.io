@@ -9,7 +9,7 @@ authors:
 
 ![show me the way](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
 
-Do HTML before doing CSS, or JS... or React.
+Do HTML before doing CSS, or JS... or React.<!--more-->
 
 ## First, there was a modal
 

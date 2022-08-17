@@ -10,7 +10,7 @@ updated_at: "2022-05-14"
 
 ![documentation is beautiful](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
 
-Make your code the best comment ever.
+Make your code the best comment ever.<!--more-->
 
 ## The undocumented array
 

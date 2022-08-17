@@ -9,7 +9,7 @@ authors:
 
 ![montrez moi le chemin](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
 
-Faites du HTML avant de faire du CSS, ou du JS... ou du React.
+Faites du HTML avant de faire du CSS, ou du JS... ou du React.<!--more-->
 
 ## Au commencement était une modale
 
