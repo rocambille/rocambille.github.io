@@ -2,12 +2,15 @@ title: Romain's service
 description: >- # this means to ignore newlines until next key:
   I write code, and I try to put words around it to share my ideas.
   I also share the cover of my little web magazine by collaborating with colleagues.
-home:
-  subscribe_to: "subscribe to "
-  rss_feed: RSS feed
 post:
   published: ""
   updated: "Updated "
   by: "By "
   discuss_on_twitter: Discuss on Twitter
   edit_on_github: Edit on GitHub
+icons_desc:
+  rss: subscribe to RSS feed
+  github: link to GitHub
+  twitter: link to Twitter
+  linkedin: link to Linkedin
+  menu: show page list

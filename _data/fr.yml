@@ -2,12 +2,15 @@ title: Le travail de Romain
 description: >- # this means to ignore newlines until next key:
   J'écris du code, et j'essaie de mettre des mots autour pour partager mes idées.
   Je partage aussi la couverture de mon petit magazine du web en collaborant avec des collègues.
-home:
-  subscribe_to: "s'abonner au "
-  rss_feed: flux RSS
 post:
   published: "Publié le "
   updated: "Mis à jour le "
   by: "Par "
   discuss_on_twitter: Discuter sur Twitter
   edit_on_github: Éditer sur GitHub
+icons_desc:
+  rss: s'abonner au flux RSS
+  github: lien vers GitHub
+  twitter: lien vers Twitter
+  linkedin: lien vers Linkedin
+  menu: afficher la liste des pages

@@ -4,27 +4,19 @@ layout: default
 
 {%- assign posts=site.posts | where:"lang", page.lang -%}
 
-{%- if posts.size > 0 -%}
-  <ul class="post-list">
-    {%- for post in posts -%}
-    <li>
-      <h2 class="mb-0">
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h2>
-      <span class="post-time">
-        {%- include {{ page.lang | append: '/time.html' }} class="dt-published" date=post.date itemprop="datePublished" -%}
-      </span>
-      <p>
-        {{ post.excerpt | strip_html}}
-      </p>
-    </li>
-    {%- endfor -%}
-  </ul>
-
-  <p class="rss-subscribe">
-    {{ site.data[page.lang].home.subscribe_to -}}
-    <a href="{{ "/feed.xml" | relative_url }}">{{ site.data[page.lang].home.rss_feed }}</a>
-  </p>
-{%- endif -%}
+<ul class="post-list">
+  {%- for post in posts -%}
+  <li>
+    <h2 class="mb-0">
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </h2>
+    <span class="post-time">
+      {%- include {{ page.lang | append: '/time.html' }} class="dt-published"
+      date=post.date itemprop="datePublished" -%}
+    </span>
+    <p>{{ post.excerpt | strip_html}}</p>
+  </li>
+  {%- endfor -%}
+</ul>

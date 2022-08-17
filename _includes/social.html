@@ -1,0 +1,55 @@
+<ul class="social-media-list">
+  <li>
+    <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"
+      ><svg
+        class="svg-icon"
+        aria-labelledby="github-icon-title github-icon-desc"
+      >
+        <title id="github-icon-title">GitHub</title>
+        <desc id="github-icon-desc">
+          {{ site.data[page.lang].icons_desc.github }}
+        </desc>
+        <use
+          xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"
+        ></use>
+      </svg>
+      <span class="username">{{ site.github_username| escape }}</span></a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}"
+      ><svg
+        class="svg-icon"
+        aria-labelledby="twitter-icon-title twitter-icon-desc"
+      >
+        <title id="twitter-icon-title">Twitter</title>
+        <desc id="twitter-icon-desc">
+          {{ site.data[page.lang].icons_desc.twitter }}
+        </desc>
+        <use
+          xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"
+        ></use>
+      </svg>
+      <span class="username">{{ site.twitter_username| escape }}</span></a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"
+      ><svg
+        class="svg-icon"
+        aria-labelledby="linkedin-icon-title linkedin-icon-desc"
+      >
+        <title id="linkedin-icon-title">Linkedin</title>
+        <desc id="linkedin-icon-desc">
+          {{ site.data[page.lang].icons_desc.linkedin }}
+        </desc>
+        <use
+          xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"
+        ></use>
+      </svg>
+      <span class="username">{{ site.linkedin_username| escape }}</span></a
+    >
+  </li>
+</ul>

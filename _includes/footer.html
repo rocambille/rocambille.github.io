@@ -1,5 +1,15 @@
 <footer class="site-footer h-card wrapper">
   <h2 class="footer-heading">{{ site.data[page.lang].title | escape }}</h2>
+  (<a href="{{ 'feed.xml' | relative_url }}">
+    <svg class="svg-icon" aria-labelledby="rss-icon-title rss-icon-desc">
+      <title id="rss-icon-title">RSS</title>
+      <desc id="rss-icon-desc">{{ site.data[page.lang].icons_desc.rss }}</desc>
+      <use
+        xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"
+      ></use>
+    </svg>
+    <span>rss</span> </a
+  >)
 
   <div class="footer-col-wrapper">
     <div class="footer-col footer-col-1">
@@ -19,7 +29,7 @@
     <div class="footer-col footer-col-2">{%- include social.html -%}</div>
 
     <div class="footer-col footer-col-3">
-      <p>{{- site.data[page.lang].description | escape -}}</p>
+      <p>{{ site.data[page.lang].description | escape }}</p>
     </div>
   </div>
 </footer>
