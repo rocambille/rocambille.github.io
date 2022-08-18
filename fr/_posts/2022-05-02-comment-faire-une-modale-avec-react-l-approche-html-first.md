@@ -191,17 +191,17 @@ C'est une beauté. Vraiment. Une telle beauté qu'elle a été ajoutée à HTML 
 
 ```react
 function Modal({ children }) {
-  return <details>{children}</details> ;
+  return <details>{children}</details>;
 }
 
 function Trigger({ children }) {
-  return <summary>{children}</summary> ;
+  return <summary>{children}</summary>;
 }
 
 Modal.Trigger = Trigger;
 
 function Window({ children }) {
-  return <div>{children}</div> ;
+  return <div>{children}</div>;
 }
 
 Modal.Window = Window;

@@ -103,9 +103,9 @@ interface MyInterface {
 }
 
 const myObject: MyInterface = {
-  anyString: '42',
-  anyNumber: '42' ; // encore une fois, mauvais type !!!
-} ;
+  anyString: "42",
+  anyNumber: "42", // encore une fois, mauvais type !!!
+};
 ```
 
 Et c'est exactement ce dont nous avons besoin. Au lieu d'un commentaire à l'utilité incertaine, nous pouvons "typer" le tableau. Cela décrira son futur contenu:

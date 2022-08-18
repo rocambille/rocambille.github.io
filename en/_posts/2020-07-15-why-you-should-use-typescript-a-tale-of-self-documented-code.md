@@ -103,8 +103,8 @@ interface MyInterface {
 }
 
 const myObject: MyInterface = {
-  anyString: '42',
-  anyNumber: '42'; // again, wrong type !!!
+  anyString: "42",
+  anyNumber: "42", // again, wrong type !!!
 };
 ```
 

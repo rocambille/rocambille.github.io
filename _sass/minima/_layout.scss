@@ -243,3 +243,71 @@
     }
   }
 }
+
+@media print {
+  // thx https://www.alsacreations.com/astuce/lire/1160-une-feuille-de-styles-de-base-pour-le-media-print.html
+
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  .highlighter-rouge .highlight,
+  code {
+    background-color: #fff !important;
+  }
+
+  p,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
+  ul,
+  ol,
+  a,
+  table,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  ul,
+  ol {
+    page-break-before: avoid;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    background: transparent !important;
+    color: unset;
+  }
+
+  a:not(.site-title),
+  a:link:not(.site-title),
+  a:visited:not(.site-title) {
+    font-weight: 700;
+    text-decoration: underline !important;
+  }
+
+  a[href^="http"]:after,
+  a[href^="https"]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .site-nav,
+  img,
+  article footer,
+  .rss-feed,
+  .social-media-list {
+    display: none;
+  }
+}
