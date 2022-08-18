@@ -1,5 +1,5 @@
 ---
-ref: why-you-should-use-typescript-a-tale-of-self-documented-code
+ref: 2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code
 lang: fr
 title: "Pourquoi utiliser TypeScript : une histoire de code autodocumenté"
 tags: typescript javascript react
@@ -8,7 +8,7 @@ authors:
 updated_at: "2022-05-14"
 ---
 
-![de l'importance de l'autodocumentation](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
+![de l'importance de l'autodocumentation](/assets/2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code-cover-min.jpeg)
 
 Faites de votre code le meilleur commentaire possible.<!--more-->
 

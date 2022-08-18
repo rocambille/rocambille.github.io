@@ -1,5 +1,5 @@
 ---
-ref: how-to-do-a-modal-in-react-the-html-first-approach
+ref: 2022-05-02-how-to-do-a-modal-in-react-the-html-first-approach
 lang: fr
 title: 'Comment faire une modale avec React : l''approche "HTML first"'
 tags: html react javascript
@@ -7,7 +7,7 @@ authors:
   - romain-guillemot
 ---
 
-![montrez moi le chemin](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m18m2ve02cet84x2us9g.jpg)
+![montrez moi le chemin](/assets/2022-05-02-how-to-do-a-modal-in-react-the-html-first-approach-cover-min.jpeg)
 
 Faites du HTML avant de faire du CSS, ou du JS... ou du React.<!--more-->
 

@@ -1,5 +1,5 @@
 ---
-ref: why-you-should-use-typescript-a-tale-of-self-documented-code
+ref: 2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code
 lang: en
 title: "Why you should use TypeScript: a tale of self-documented code"
 tags: typescript javascript react
@@ -8,7 +8,7 @@ authors:
 updated_at: "2022-05-14"
 ---
 
-![documentation is beautiful](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n12f02gzersleak8gcyw.jpeg)
+![documentation is beautiful](/assets/2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code-cover-min.jpeg)
 
 Make your code the best comment ever.<!--more-->
 
