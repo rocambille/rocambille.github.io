@@ -2,5 +2,5 @@
 ref: home
 lang: fr
 layout: home
-title: Le travail de Romain
+title: Un travail de Romain
 ---
