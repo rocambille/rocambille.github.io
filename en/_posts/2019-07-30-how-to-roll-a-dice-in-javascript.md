@@ -8,7 +8,7 @@ authors:
 updated_at: "2022-05-11"
 ---
 
-![dices are beautiful](/assets/2019-07-30-how-to-roll-a-dice-in-javascript-cover-min.jpeg)
+![dices are beautiful](/assets/2019-07-30-how-to-roll-a-dice-in-javascript-cover-min.jpeg){: width="768"}{: height="513" }
 
 Let's build the ultimate dice step by step.<!--more-->
 

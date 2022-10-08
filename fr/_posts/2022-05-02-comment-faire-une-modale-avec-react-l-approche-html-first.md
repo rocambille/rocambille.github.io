@@ -7,7 +7,7 @@ authors:
   - romain-guillemot
 ---
 
-![montrez moi le chemin](/assets/2022-05-02-how-to-do-a-modal-in-react-the-html-first-approach-cover-min.jpeg)
+![montrez moi le chemin](/assets/2022-05-02-how-to-do-a-modal-in-react-the-html-first-approach-cover-min.jpeg){: width="768"}{: height="512" }
 
 Faites du HTML avant de faire du CSS, ou du JS... ou du React.<!--more-->
 

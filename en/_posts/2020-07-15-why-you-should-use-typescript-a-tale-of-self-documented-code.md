@@ -8,7 +8,7 @@ authors:
 updated_at: "2022-05-14"
 ---
 
-![documentation is beautiful](/assets/2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code-cover-min.jpeg)
+![documentation is beautiful](/assets/2020-07-15-why-you-should-use-typescript-a-tale-of-self-documented-code-cover-min.jpeg){: width="768"}{: height="483" }
 
 Make your code the best comment ever.<!--more-->
 

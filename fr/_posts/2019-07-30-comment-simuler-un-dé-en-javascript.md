@@ -8,7 +8,7 @@ authors:
 updated_at: "2022-05-11"
 ---
 
-![la beauté des dés](/assets/2019-07-30-how-to-roll-a-dice-in-javascript-cover-min.jpeg)
+![la beauté des dés](/assets/2019-07-30-how-to-roll-a-dice-in-javascript-cover-min.jpeg){: width="768"}{: height="513" }
 
 Construisons le dé ultime étape par étape.<!--more-->
 
