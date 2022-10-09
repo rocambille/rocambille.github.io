@@ -5,7 +5,9 @@ description: >- # this means to ignore newlines until next key:
 post:
   published: "Publié le "
   updated: "Mis à jour le "
-  by: "Par "
+  by: "Par"
+  and: "et"
+  translated_by: "traduction de"
   discuss_on_twitter: Discuter sur Twitter
   edit_on_github: Éditer sur GitHub
 icons_desc:

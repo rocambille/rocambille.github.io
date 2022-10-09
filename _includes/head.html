@@ -23,13 +23,14 @@
     href="/assets/favicon-16x16.png"
   />
   {%- assign sources=site.posts | concat: site.pages | concat: site.authors |
-  where:"ref", page.ref | sort: 'lang' -%} {%- for source in sources -%}
+  where:"ref", page.ref | sort: 'lang' -%} {%- assign sourceCount=sources | size
+  -%} {%- if sourceCount > 1 -%} {%- for source in sources -%}
   <link
     rel="alternate"
     href="{{site.url}}{{ source.url }}"
     hreflang="{{ source.lang }}"
   />
-  {%- endfor -%}
+  {%- endfor -%} {%- endif -%}
   <link rel="manifest" href="/assets/site.webmanifest" />
   {%- feed_meta -%} {%- if jekyll.environment == 'production' and
   site.google_analytics -%} {%- include google-analytics.html -%} {%- endif -%}

@@ -12,12 +12,20 @@ layout: default
       {{ page.title | escape }}
     </h1>
     <address>
-      {{- site.data[page.lang].post.by -}} {%- for author_ref in page.authors
-      -%} {%- unless forloop.first -%} {%- if forloop.last %} et {% else -%}, {%
-      endif -%} {%- endunless -%} {%- assign author = site.authors | where:
-      'ref', author_ref | where: 'lang', page.lang | first -%}
+      {{- site.data[page.lang].post.by }} {% for author_ref in page.authors -%}
+      {%- unless forloop.first -%} {%- if forloop.last %} {{
+      site.data[page.lang].post.and }} {% else -%}, {% endif -%} {%- endunless
+      -%} {%- assign author = site.authors | where: 'ref', author_ref | where:
+      'lang', page.lang | first -%}
       <a rel="author" href="{{ author.url }}">{{ author.name }}</a>
-      {%- endfor -%}
+      {%- endfor -%} {%- if page.translators %} ({{
+      site.data[page.lang].post.translated_by }} {% for translator_ref in
+      page.translators -%} {%- unless forloop.first -%} {%- if forloop.last %}
+      {{ site.data[page.lang].post.and }} {% else -%}, {% endif -%} {%-
+      endunless -%} {%- assign translator = site.authors | where: 'ref',
+      translator_ref | where: 'lang', page.lang | first -%}
+      <a rel="author" href="{{ translator.url }}">{{ translator.name }}</a>
+      {%- endfor -%}){%- endif -%}
     </address>
     <p class="post-time">
       {{ site.data[page.lang].post.published -}}{%- include {{ page.lang |
