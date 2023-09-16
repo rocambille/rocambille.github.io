@@ -1,0 +1,7 @@
+{%- assign sources = site.posts | concat: site.pages | concat: site.authors |
+where:"ref", page.ref | sort: 'lang' -%} {%- assign source_count = sources |
+size -%} {%- if source_count > 1 -%} {%- if page.lang == "fr" -%}
+<a href="{{ sources[0].url }}">in english?</a>
+{%- else -%}
+<a href="{{ sources[1].url }}">en français ?</a>
+{%- endif -%} {%- endif -%}

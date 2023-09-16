@@ -1,14 +1,18 @@
 <header class="site-header wrapper">
   {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
   = site.header_pages | default: default_paths -%} {%- assign home=site.pages |
-  where:"ref", "home" | where:"lang", page.lang | first -%}
-  <h1>
-    <a class="site-title" rel="author" href="{{ home.url | relative_url }}">
-      {{ site.data[page.lang].title | escape }}
-    </a>
-  </h1>
-
-  {%- if page_paths -%}
+  where:"ref", "home" | where:"lang", page.lang | first -%} {%- capture
+  title_content -%}<a
+    class="site-title"
+    rel="author"
+    href="{{ home.url | relative_url }}"
+  >
+    {{ site.data[page.lang].title | escape }} </a
+  >{%- endcapture -%} {%- if page.ref == "home" -%}
+  <h1>{{title_content}}</h1>
+  {%- else -%}
+  <h2>{{title_content}}</h2>
+  {%- endif -%} {%- if page_paths -%}
   <nav class="site-nav">
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
     <label for="nav-trigger" class="menu-icon">
@@ -30,15 +34,9 @@
     </label>
 
     <div class="trigger">
-      {%- assign sources=site.posts | concat: site.pages | concat: site.authors
-      | where:"ref", page.ref | sort: 'lang' -%} {%- assign sourceCount=sources
-      | size -%} {%- if sourceCount > 1 -%} {%- if page.lang == "fr" -%}
-      <a href="{{ sources[0].url }}">in english?</a>
-      {%- else -%}
-      <a href="{{ sources[1].url }}">en français ?</a>
-      {%- endif -%} {%- endif -%} {%- assign pages = site.pages | where:"lang",
-      page.lang | where_exp: "page", "page.ref != 'home'" -%} {%- for page in
-      pages -%}
+      {%- include language.html -%}{%- assign pages = site.pages | where:"lang",
+      page.lang | where_exp: "page", "page.ref != 'home' and page.ref != 404"
+      -%} {%- for page in pages -%}
       <a class="page-link" href="{{ page.url }}">{{ page.title | escape }}</a>
       {%- endfor -%}
     </div>
