@@ -7,7 +7,8 @@ authors:
   - romain-guillemot
 ---
 
-A common pattern when using a `for` loop is to combine it with an `else` statement. This is possible in many template engines, such as [Twig](https://twig.symfony.com/doc/3.x/tags/for.html#the-else-clause), as shown below:
+A common pattern when using a `for` loop is to combine it with an `else` statement.<!--more-->
+This is possible in many template engines, such as [Twig](https://twig.symfony.com/doc/3.x/tags/for.html#the-else-clause), as shown below:
 
 {% raw %}
 

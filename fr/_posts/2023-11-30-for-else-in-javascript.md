@@ -7,7 +7,8 @@ authors:
   - romain-guillemot
 ---
 
-Un pattern courant lors de l'utilisation d'une boucle `for` est de la combiner avec une instruction `else`. Ceci est possible dans de nombreux moteurs de templates, tels que [Twig](https://twig.symfony.com/doc/3.x/tags/for.html#the-else-clause), comme dans l'exemple ci-dessous :
+Un pattern courant lors de l'utilisation d'une boucle `for` est de la combiner avec une instruction `else`.<!--more-->
+Ceci est possible dans de nombreux moteurs de templates, tels que [Twig](https://twig.symfony.com/doc/3.x/tags/for.html#the-else-clause), comme dans l'exemple ci-dessous :
 
 {% raw %}
 
