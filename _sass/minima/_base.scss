@@ -34,6 +34,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  line-height: 1.6;
 }
 
 /**
@@ -53,7 +54,7 @@ ol,
 dl,
 figure,
 %vertical-rhythm {
-  margin-bottom: calc($spacing-unit / 2);
+  margin-bottom: $spacing-unit;
 }
 
 /**
