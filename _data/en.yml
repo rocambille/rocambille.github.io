@@ -8,11 +8,9 @@ post:
   by: "By"
   and: "and"
   translated_by: "translation from"
-  discuss_on_twitter: Discuss on Twitter
   edit_on_github: Edit on GitHub
 icons_desc:
   rss: subscribe to RSS feed
   github: link to GitHub
-  twitter: link to Twitter
   linkedin: link to Linkedin
   menu: show page list
